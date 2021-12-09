@@ -1,60 +1,60 @@
-# Clean Architecture practice
+# Clean Architecture na prática
 
-A project in which it aplies the concepts of Clean Architecture.
+Um projeto no qual se aplicam os conceitos de Clean Architecture.
 
 ![Diagram](./docs/diagram-project.png)
 
 ## Clean Archtect
 
-* Excessive couplement generates inflexibility, making an application unabled of any evolution, becaming legacy and needed to be totally dveloped again from zero.
+* O excesso de acoplamento gera inflexibilidade. tornando um aplicativo inabilitado para quelquer evolução, tornando-se legado e precisando ser totalemente desenvolvido novamente do zero.
 
-* Business rules generally does not change, but can evolve themselves.
+* As regras de negócios geralmente não mudam, mas podem evoluir.
 
-* Clean Architecture prevents the application to take the risk to not evolve anymore over the time;
+* Clean Architecture evita que o aplicativo corra o risco de não evoluir mais com o passar do tempo;
 
-* We can not choose the business rules, but we can choose the technologies and it could be deprecated;
+* Não podemos escolher as regras de negócio, mas podemos escolher as tecnologias e pode ser descontinuado;
 
-* There is no sense to change the framework, for example, and must have to manipulate the business rules;
+* Não faz sentido mudar o framework, por exemplo, e deve ter que manipular as regras de negócio;
 
-* Software architecting is a way to plan and develop an application that remains itself and pays itself over time, meaning it is a sustainable application;
+* A arquitetura de software é uma forma de planejar e desenvolver um aplicativo que permanece ele mesmo e se paga ao logo do tempo, o que significa que é um aplicativo sustentável;
 
-* History:
+* história:
  * DDD - Eric Evans - 2003;
  * Hexagonal - Cockburn - 2005;
  * Orion Arch - Jeff Palermo - 2008;
  * Clean Archtecture - Robert Martin - Uncle Bob - 2012.
- * The similarity of these approachs is the heart of an application is centralized and separated / uncoupled from another layers / components.
+ * A semelhança dessas abordagens é que o coração de um aplicativo é centralizado e separado / desacoplado de outras camadas / componentes.
 
-* In Clean Archtecture we focus on the business rules and leave the details for later (e.g. DB, HTTP framework...);
+* Em Clean Architecture, nos concentramos nas regras de negócios e deixamos os detalhes para depois(por exemplo, DB, estrutura HTTP);
 
-* The center of an application is not the database, or the framework to be used, but the use cases of the application;
+* O centro de um aplicativo não é o banco de dados ou a estrutura a ser usada, mas os casos de uso do aplicativo;
 
-* Clean Arch is an archtectural strategy decoupling oriented among the business rules of an application and the external resources:
+* Clean Architecture é uma estratégia arquitetônica de desacoplamento orientada entre as regras de negócio de uma aplicação e os recursos externos:
 
 ![Clean Arch](./docs/clean-arch.jpeg)
 
 * Use cases + entities = Core;
-* Use cases handles entities;
-* Use cases access external resources (database, APIs, UIs...) through adapters interconnected by the corruption layer;
- - Adapters performs the conversion between a world to another world.
+* Use cases tratam entities;
+* Use cases acessa recursos externos (database, APIs, UIs...) por meio de adaptadores interconectados pela camada de corrupção;
+ - Adapters realizam a conversão de um mundo para outro mundo.
 
 ## Entities
- * Responsible for the concentration of the main participants of the business rules;
-  * Business objects;
-  * Applies rules which generally is part of onlye the entities.
+ * Responsável pela concentração dos principais participantes das regras de negócio;
+  * Objetos de negócios;
+  * Aplica regras que geralmente fazem parte apenas das entidades.
 
 ## Use Cases
-* Performs the orchestration of the entities at conception of the business rules;
- * It represents the business rules;
- * Use cases is not aware who is using it, whether it is consuming a JSON or XML format, for example, because it is using an adapter in order to be agnostic;
- * Throws business exceptions.
+* Executa a orquestração das entidades na concepção das regras de negócios;
+ * Representa as regras de negócios;
+ * Os casos de uso não sabem quem está usando, se está consumindo um forma JSON ou XML, por exemplo, porque está usando um adaptador para ser agnóstico;
+ * Lança exceções de negócios.
 
 ## Interface Adapters
-* Performs translation between external world with the core (use cases and entities);
-* Performs data exchanges between databases, GUI and / or another services used by the applciation;
-* Defines interfaces in manner which one or more implementations could exists (implemented in a concret way);
-* Usecases do not know where the data area coming from;
+* Executa a tradução entre o mundo externo e o núcleo (use cases e entities);
+* Executa trocas de dados entre banco de dados, GUI e/ou outros serviçoes usados pelo aplicativo;
+* Define interfaces de maneira que uma ou mais implementações possam existir(implementadas de forma concreta);
+* Os casos de us não sabem de onde vem a área de dados;
 
 ## Frameworks and Drivers
-* It is a layer which performs que I/O with the application;
-* DB, framework, third-part integrations, file system, and so on are some examples and they are purely tech aspects which not influence the core of the application;
+* É uma camada que realiza I/O com a aplicação;
+* DB, framework, integrações de terceiros, sistema de arquivos, e assim por diante são alguns exemplos e são aspectos puramente técnicos que não influenciam o núcleo do aplicativo;
