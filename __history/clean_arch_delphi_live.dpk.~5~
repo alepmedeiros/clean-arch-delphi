@@ -1,0 +1,47 @@
+package clean_arch_delphi_live;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl;
+
+contains
+  CarroEstacionado in 'src\core\entity\CarroEstacionado.pas',
+  Estacionamento in 'src\core\entity\Estacionamento.pas',
+  ExtacionamentoRepository in 'src\core\repository\ExtacionamentoRepository.pas',
+  EntrarEstacionamento in 'src\core\usecase\EntrarEstacionamento.pas',
+  ObterEstacionamento in 'src\core\usecase\ObterEstacionamento.pas',
+  ExtacionamentoAdapter in 'src\adapter\ExtacionamentoAdapter.pas',
+  HorseAdapter in 'src\adapter\HorseAdapter.pas',
+  database in 'src\infra\database\database.pas',
+  apihorse in 'src\infra\http\apihorse.pas',
+  EstacionamentoRepositoryMemory in 'src\infra\repository\EstacionamentoRepositoryMemory.pas',
+  EstacionamentoRepositorySQL in 'src\infra\repository\EstacionamentoRepositorySQL.pas',
+  EstacionamentoController in 'src\controller\EstacionamentoController.pas';
+
+end.

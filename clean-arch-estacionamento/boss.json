@@ -1,0 +1,12 @@
+{
+	"name": "clean-arch-delphi-live",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./",
+	"projects": [],
+	"dependencies": {
+		"github.com/hashload/horse": "^v2.0.14",
+		"https://github.com/gabrielbaltazar/gbjson": "^1.0.9"
+	}
+}
