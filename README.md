@@ -6,9 +6,10 @@ How to begin with "Clean Architecture".
 
 ## Architectural Concepts
 
-* [Use Case](docs/use_case.md)
-* [Domain](docs/domain.md)
-* [Gateway](docs/gateway.md)
+* Use Case
+* Domain
+* Gateway
+* Infra
 
 ### Basics
 
