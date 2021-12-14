@@ -11,7 +11,6 @@ type
   TMakeDeposit = class
   private
     FFinancialRepository: iFinancialrepository;
-    procedure Validade(const aDeposit: TDeposit);
   public
     constructor Create(FinancialRepository: iFinancialrepository);
     procedure Execute(const aValue: Double);
@@ -34,18 +33,11 @@ begin
   try
     lDeposit.Value := aValue;
 
-    Validade(lDeposit);
-
     FFinancialRepository.SaveDeposit(lDeposit);
   finally
     lDeposit.DisposeOf;
   end;
 end;
 
-procedure TMakeDeposit.Validade(const aDeposit: TDeposit);
-begin
-  if (aDeposit.Value <= 0) then
-    raise EArgumentException.Create('Enter a valid deposit amount');
-end;
 
 end.
