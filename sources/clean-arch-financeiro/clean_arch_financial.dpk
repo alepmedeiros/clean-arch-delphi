@@ -53,6 +53,7 @@ contains
   Financial.Gateway.Withdraw in 'src\gateway\Financial.Gateway.Withdraw.pas',
   Financial.Gateway.Balance in 'src\gateway\Financial.Gateway.Balance.pas',
   Financial.Controller in 'src\controller\Financial.Controller.pas',
-  Financial.Gateway.RepositoryFiredac in 'src\infra\repository\Financial.Gateway.RepositoryFiredac.pas';
+  Financial.Gateway.RepositoryFiredac in 'src\infra\repository\Financial.Gateway.RepositoryFiredac.pas',
+  Financial.Gateway.RepositoryTxt in 'src\infra\repository\Financial.Gateway.RepositoryTxt.pas';
 
 end.

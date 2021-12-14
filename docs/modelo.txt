@@ -20,3 +20,21 @@ verifica saldo
 fazer um depóstio
 sacar dinheiro
 incluir Hitórico
+
+--Aplicabilidade dos testes
+	deve depositar
+	deve obeter o saldo da conta
+	deve estar sem saldo
+	
+
+
+A ideia de um teste, é q ele vá usar o caso de uso
+
+o caso de uso irá ser executado
+no nosso caso irá ser um deposito, que será o primeiro a ser executado, nesse caso terei que retornar um valor para saber se o ação do execute está ocorrendo.
+
+para o caso de uso trabalhar irei precisar criar um repository para trabalhar a inversão de dependencia no caso de uso.
+
+na linguagem OO a forma normal de desacoplar é inverter a dependencia.
+
+
