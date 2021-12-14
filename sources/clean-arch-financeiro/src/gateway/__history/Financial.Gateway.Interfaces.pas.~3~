@@ -1,0 +1,20 @@
+unit Financial.Gateway.Interfaces;
+
+interface
+
+uses
+  Financial.Entities.Withdraw,
+  Financial.Entities.Deposit,
+  Financial.Entities.Historic;
+
+type
+  iGateway = interface
+    procedure SaveWithdrawal(aWithdraw: TWithdraw);
+    procedure SaveDeposit(aDeposit: TDeposit);
+    procedure SaveHistory(aHistory: THistoric);
+    function ObterSaldo: double;
+  end;
+
+implementation
+
+end.

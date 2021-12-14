@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<test-results name="C:\MyRepository\clean-arch-delphi-live\sources\clean-arch-estacionamento\test\Win32\Debug\clean_archteture.test.exe" total="4" errors="4" failures="0" ignored="0" inconclusive="0" not-run="0" skipped="0" invalid="0" date="2021-12-14" time="8.571">
+  <culture-info current-culture="en" current-uiculture="en" />
+  <test-suite type="Assembly" name="clean_archteture.test.exe" executed="true" result="Failure" success="False" time="8.571" asserts="0">
+    <results>
+        <test-suite type="Namespace" name="EntrarEstacionamento" executed="true" result="Success" success="True" time="8.571" asserts="0" >
+          <results>
+              <test-suite type="Fixture" name="TEnterParkinLot" executed="True" result="Success" success="True" time="8.571" >
+                <results>
+                  <test-case name="DeveEntrarEstacionamento" executed="True" result="Error" success="False" time="4.339" asserts="0" >
+                    <failure>
+                      <message>
+                        <![CDATA[ [FireDAC][Phys][SQLite] ERROR: unable to open database file ]]>
+                      </message>
+                      <stack-trace>
+                        <![CDATA[  ]]>
+                      </stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="DeveObterEstacionamento" executed="True" result="Error" success="False" time="1.373" asserts="0" >
+                    <failure>
+                      <message>
+                        <![CDATA[ [FireDAC][Phys][SQLite] ERROR: unable to open database file ]]>
+                      </message>
+                      <stack-trace>
+                        <![CDATA[  ]]>
+                      </stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="DeveEstarFechado" executed="True" result="Error" success="False" time="1.814" asserts="0" >
+                    <failure>
+                      <message>
+                        <![CDATA[ '10/12/2021 08:00' is not a valid date ]]>
+                      </message>
+                      <stack-trace>
+                        <![CDATA[  ]]>
+                      </stack-trace>
+                    </failure>
+                  </test-case>
+                  <test-case name="DeveEstaCheio" executed="True" result="Error" success="False" time="0.722" asserts="0" >
+                    <failure>
+                      <message>
+                        <![CDATA[ '10/12/2021 08:00' is not a valid date ]]>
+                      </message>
+                      <stack-trace>
+                        <![CDATA[  ]]>
+                      </stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+          </results>
+        </test-suite>
+    </results>
+  </test-suite>
+</test-results>

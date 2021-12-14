@@ -1,0 +1,20 @@
+unit Financial.Repository.Interfaces;
+
+interface
+
+uses
+  Financial.Entities.Withdraw,
+  Financial.Entities.Deposit,
+  Financial.Entities.Historic;
+
+type
+  iFinancialRepository = interface
+    procedure SaveLoot(aWithdrow: TWithdraw);
+    procedure SaveDeposit(aDeposit: TDeposit);
+    procedure SaveHistoric(aHistoric: THistoric);
+    function GetBalance: Double;
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,40 @@
+unit Financeiro.test;
+
+interface
+
+uses
+  Financial.Controller,
+  DUnitX.TestFramework;
+
+type
+  [TestFixture]
+  TFinanceirotest = class
+  public
+    [Setup]
+    procedure Setup;
+    [TearDown]
+    procedure TearDown;
+
+    [Test]
+    procedure MakeWorthlessDeposit;
+  end;
+
+implementation
+
+procedure TFinanceirotest.MakeWorthlessDeposit;
+begin
+
+end;
+
+procedure TFinanceirotest.Setup;
+begin
+end;
+
+procedure TFinanceirotest.TearDown;
+begin
+end;
+
+initialization
+  TDUnitX.RegisterTestFixture(TFinanceirotest);
+
+end.

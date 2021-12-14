@@ -1,0 +1,54 @@
+unit Financial.Controller;
+
+interface
+
+uses
+  Financial.Gateway.Deposit,
+  Financial.Gateway.Interfaces,
+  Financial.Infra.Database, Financial.Gateway.Withdraw;
+
+type
+  TController = class
+  private
+    FConnection: iGateway;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure Saccade(aValue: Double);
+    procedure MakeDeposit(aValue: Double);
+  end;
+
+implementation
+
+{ TController }
+
+constructor TController.Create;
+begin
+  FConnection := TConnection.New;
+end;
+
+destructor TController.Destroy;
+begin
+
+  inherited;
+end;
+
+procedure TController.MakeDeposit(aValue: Double);
+var
+  lGatewayDeposit: TGatewayDeposit;
+begin
+  lGatewayDeposit := TGatewayDeposit.Create(FConnection);
+
+  lGatewayDeposit.Deposit(aValue);
+end;
+
+procedure TController.Saccade(aValue: Double);
+var
+  lGatewayWithdraw: TGatewayWithdraw;
+begin
+  lGatewayWithdraw := TGatewayWithdraw.Create(FConnection);
+
+  lGatewayWithdraw.ToWithdraw(aValue);
+end;
+
+end.

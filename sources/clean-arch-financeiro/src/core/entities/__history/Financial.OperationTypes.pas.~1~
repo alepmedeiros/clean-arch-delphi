@@ -1,0 +1,10 @@
+unit Financial.OperationTypes;
+
+interface
+
+type
+  TOperationType = (opWithdraw, opDeposit)
+
+implementation
+
+end.

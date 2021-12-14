@@ -1,0 +1,47 @@
+package clean_arch_financial;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl;
+
+contains
+  Financial.Entities.Deposit in 'src\core\entities\Financial.Entities.Deposit.pas',
+  Financial.Entities.Withdraw in 'src\core\entities\Financial.Entities.Withdraw.pas',
+  Financial.Entities.Historic in 'src\core\entities\Financial.Entities.Historic.pas',
+  Financial.Entities.OperationTypes in 'src\core\entities\Financial.Entities.OperationTypes.pas',
+  Financial.UseCase.CheckBalance in 'src\core\usecase\Financial.UseCase.CheckBalance.pas',
+  Financial.Repository.Interfaces in 'src\core\repository\Financial.Repository.Interfaces.pas',
+  Financial.UseCase.IncludeHistory in 'src\core\usecase\Financial.UseCase.IncludeHistory.pas',
+  Financial.UseCase.MakeDeposit in 'src\core\usecase\Financial.UseCase.MakeDeposit.pas',
+  Financial.UseCase.WithdrawMoney in 'src\core\usecase\Financial.UseCase.WithdrawMoney.pas',
+  Financial.Infra.Database in 'src\infra\database\Financial.Infra.Database.pas',
+  Financial.Gateway.RepositoryFiredac in 'src\gateway\Financial.Gateway.RepositoryFiredac.pas',
+  Financial.Gateway.Interfaces in 'src\gateway\Financial.Gateway.Interfaces.pas';
+
+end.

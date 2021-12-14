@@ -1,0 +1,41 @@
+unit Financial.UseCase.IncludeHistory;
+
+interface
+
+uses
+  Financial.Repository.Interfaces, Financial.Entities.OperationTypes,
+  Financial.Entities.Historic;
+
+type
+  TIncludeHistory = class
+  private
+    FFinancialRepository : iFinancialRepository
+  public
+    constructor Create(FinancialRepository : iFinancialRepository);
+    procedure Execute(const aOperationType : TOperationType; const aValue: Double);
+  end;
+
+implementation
+
+{ TIncludeHistory }
+
+constructor TIncludeHistory.Create(FinancialRepository: iFinancialRepository);
+begin
+  FFinancialRepository := FinancialRepository;
+end;
+
+procedure TIncludeHistory.Execute(const aOperationType : TOperationType; const aValue: Double);
+var
+  lHistoric : THistoric;
+  lOperation : String;
+  lDescription : String;
+begin
+  lHistoric := THistoric.Create;
+  try
+    FFinancialRepository.SaveHistoric(lHistoric);
+  finally
+    lHistoric.DisposeOf;
+  end;
+end;
+
+end.

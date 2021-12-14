@@ -1,0 +1,19 @@
+Entity 
+
+ParkingLot
+
+code
+pacity
+openHour
+closeHour
+
+ParkedCar
+
+code
+plate
+date
+
+Use Case
+
+EnterParkinLot
+LeaveParkingLot

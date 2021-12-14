@@ -1,0 +1,74 @@
+unit Financial.Infra.Database;
+
+interface
+
+uses
+  Firedac.Stan.Intf,
+  Firedac.Stan.Option,
+  Firedac.Stan.Error,
+  Firedac.UI.Intf,
+  Firedac.Phys.Intf,
+  Firedac.Stan.Def,
+  Firedac.Stan.Pool,
+  Firedac.Stan.Async,
+  Firedac.Phys,
+  Firedac.Phys.SQLite,
+  Firedac.Phys.SQLiteDef,
+  Firedac.Stan.ExprFuncs,
+  Firedac.Phys.SQLiteWrapper.Stat,
+  Firedac.VCLUI.Wait,
+  Firedac.Comp.Client,
+  FireDAC.Stan.Param,
+  FireDAC.DatS,
+  FireDAC.DApt.Intf,
+  FireDAC.DApt,
+  FireDAC.Comp.DataSet,
+  Data.DB;
+
+type
+  TConnection = class
+  private
+    FConnection : TFDConnection;
+    FQuery : TFDQuery;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure Execute(const aCommand: String);
+    function GetValue(const aCommand: String) : Variant;
+  end;
+
+implementation
+
+{ TConnection }
+
+constructor TConnection.Create;
+begin
+  FConnection := TFDConnection.Create(nil);
+  FQuery := TFDQuery.Create(nil);
+  FQuery.Connection := FConnection;
+  FConnection.Params.Clear;
+  FConnection.Params.Add('DriverID=SQLite');
+  FConnection.Params.Add('DataBase=..\..\database\dados.sdb');
+  FConnection.Params.Add('LockingMode=Normal');
+  FConnection.LoginPrompt := False;
+
+  FConnection.Connected := True;
+end;
+
+destructor TConnection.Destroy;
+begin
+
+  inherited;
+end;
+
+procedure TConnection.Execute(const aCommand: String);
+begin
+
+end;
+
+function TConnection.GetValue(const aCommand: String): Variant;
+begin
+
+end;
+
+end.

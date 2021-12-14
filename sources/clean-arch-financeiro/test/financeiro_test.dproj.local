@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/12/13 04:30:50.000.065,=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/13 04:31:19.000.520,C:\MyRepository\clean-arch-delphi-live\sources\clean-arch-financeiro\test\Financeiro.test.pas=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/13 04:31:30.000.742,C:\MyRepository\clean-arch-delphi-live\sources\clean-arch-financeiro\test\financeiro_test.dproj=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

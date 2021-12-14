@@ -1,0 +1,22 @@
+1º Definir alguns testes
+
+Definir qual o caso de uso que iremos trabalhar:
+
+conta bancaria
+
+entitdade
+
+deposito
+	valor
+saque
+	valor
+hitorico
+	data do evento
+	descricao
+
+use case
+
+verifica saldo
+fazer um depóstio
+sacar dinheiro
+incluir Hitórico

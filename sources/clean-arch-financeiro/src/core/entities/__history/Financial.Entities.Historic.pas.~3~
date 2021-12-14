@@ -1,0 +1,19 @@
+unit Financial.Entities.Historic;
+
+interface
+
+type
+  THistoric = class
+  private
+    FEnvetDate: String;
+    FDescription: String;
+    FOperation: String;
+  public
+    property EnvetDate: String read FEnvetDate write FEnvetDate;
+    property Description: String read FDescription write FDescription;
+    property Operation: String read FOperation write FOperation;
+  end;
+
+implementation
+
+end.

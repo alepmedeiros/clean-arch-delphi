@@ -1,0 +1,10 @@
+unit Financeiro.Deposito;
+
+interface
+
+type
+  TD
+
+implementation
+
+end.

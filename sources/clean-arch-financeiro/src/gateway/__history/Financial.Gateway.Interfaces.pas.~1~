@@ -1,0 +1,13 @@
+unit Financial.Gateway.Interfaces;
+
+interface
+
+type
+  iGatewayRepository = interface
+    procedure Execute(const aCommand: String);
+    function GetValue(const aCommand: String) : Variant;
+  end;
+
+implementation
+
+end.
