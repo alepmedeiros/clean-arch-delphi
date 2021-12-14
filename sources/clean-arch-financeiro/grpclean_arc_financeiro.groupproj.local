@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-	<Transactions>
-    <Transaction>2021/12/13 04:31:48.000.781,C:\MyRepository\clean-arch-delphi-live\sources\clean-arch-financeiro\grpclean_arc_financeiro.groupproj=C:\Users\Criacao\Documents\Embarcadero\Studio\Projects\ProjectGroup1.groupproj</Transaction>
-  </Transactions>
-	<Default.Personality>
-		<Projects ActiveProject="C:\MyRepository\clean-arch-delphi-live\sources\clean-arch-financeiro\test\financeiro_test.dproj"/>
-	</Default.Personality>
-</BorlandProject>
