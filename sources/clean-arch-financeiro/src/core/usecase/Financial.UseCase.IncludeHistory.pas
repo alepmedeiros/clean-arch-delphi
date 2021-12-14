@@ -39,7 +39,7 @@ begin
       Format('a %s operation in the amount of %.2f as corried out',
       [aOperationType.ToString, aValue]);
 
-    FFinancialRepository.SaveHistory(lHistoric);
+    FFinancialRepository.SaveHistory(lHistoric.EnvetDate,lHistoric.Description);
   finally
     lHistoric.DisposeOf;
   end;

@@ -18,9 +18,9 @@ type
     constructor Create(Gateway: iGateway);
     destructor Destroy; override;
     class function New(Gateway: iGateway): iFinancialRepository;
-    procedure SaveWithdrawal(aWithdraw: TWithdraw);
-    procedure SaveDeposit(aDeposit: TDeposit);
-    procedure SaveHistory(aHistory: THistoric);
+    procedure SaveWithdrawal(Value: Double);
+    procedure SaveDeposit(Value: Double);
+    procedure SaveHistory(aEventDate, aDescription: String);
     function GetBalance: Double;
   end;
 
@@ -50,7 +50,7 @@ begin
   Result := Self.Create(Gateway);
 end;
 
-procedure TFinancialRepositoryFiredac.SaveDeposit(aDeposit: TDeposit);
+procedure TFinancialRepositoryFiredac.SaveDeposit(Value: Double);
 var
   lCommand: TStringBuilder;
 begin
@@ -58,7 +58,7 @@ begin
   try
     lCommand
       .Append('UPDATE ACCOUNT SET BALANCE = BALANCE + ')
-      .Append(aDeposit.Value)
+      .Append(Value)
       .Append(' WHERE ID = 1');
 
     FGateway.Execute(lCommand.ToString);
@@ -67,7 +67,7 @@ begin
   end;
 end;
 
-procedure TFinancialRepositoryFiredac.SaveHistory(aHistory: THistoric);
+procedure TFinancialRepositoryFiredac.SaveHistory(aEventDate, aDescription: String);
 var
   lCommand: TStringBuilder;
 begin
@@ -76,8 +76,8 @@ begin
     lCommand
       .Append('INSERT INTO HISTORY VALUES ')
       .AppendFormat('(%s, %s)',
-    [QuotedStr(aHistory.EnvetDate),
-    QuotedStr(aHistory.Description.QuotedString)]);
+    [QuotedStr(aEventDate),
+    QuotedStr(aDescription)]);
 
     FGateway.Execute(lCommand.ToString);
   finally
@@ -85,7 +85,7 @@ begin
   end;
 end;
 
-procedure TFinancialRepositoryFiredac.SaveWithdrawal(aWithdraw: TWithdraw);
+procedure TFinancialRepositoryFiredac.SaveWithdrawal(Value: Double);
 var
   lCommand: TStringBuilder;
 begin
@@ -93,7 +93,7 @@ begin
   try
     lCommand
       .Append('UPDATE ACCOUNT SET BALANCE = BALANCE - ')
-      .Append(aWithdraw.Value)
+      .Append(Value)
       .Append(' WHERE ID = 1');
 
     FGateway.Execute(lCommand.ToString);

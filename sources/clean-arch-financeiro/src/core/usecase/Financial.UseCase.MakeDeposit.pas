@@ -31,9 +31,12 @@ var
 begin
   lDeposit := TDeposit.Create;
   try
+    if not lDeposit.Validate(aValue) then
+      raise EArgumentException.Create('Enter a valid deposit amount');
+
     lDeposit.Value := aValue;
 
-    FFinancialRepository.SaveDeposit(lDeposit);
+    FFinancialRepository.SaveDeposit(lDeposit.Value);
   finally
     lDeposit.DisposeOf;
   end;

@@ -2,34 +2,30 @@ unit Financial.Entities.Withdraw;
 
 interface
 
-uses
-  System.SysUtils;
-
 type
   TWithdraw = class
   private
     FValue: Double;
-    procedure SetValue(const Value: Double);
   public
-    procedure isBalance(const Value: Double);
-    property Value: Double read FValue write SetValue;
+    function isValue(const Value: Double) : Boolean;
+    function isBalance(const Value: Double) : Boolean;
+
+    property Value: Double read FValue write FValue;
   end;
 
 implementation
 
 { TWithdraw }
 
-procedure TWithdraw.isBalance(const Value: Double);
+
+function TWithdraw.isBalance(const Value: Double): Boolean;
 begin
-  if (Value < FValue) then
-    raise EInvalidOp.Create('There is not enough balance for this withdrawal.');
+  Result := (Value > FValue);
 end;
 
-procedure TWithdraw.SetValue(const Value: Double);
+function TWithdraw.isValue(const Value: Double): Boolean;
 begin
-  if (Value <= 0) then
-    raise EArgumentException.Create('Enter a valid amount for the withdrawal.');
-  FValue := Value;
+  Result := (Value > 0);
 end;
 
 end.

@@ -31,11 +31,15 @@ var
 begin
   lWithdraw := TWithdraw.Create;
   try
+    if not lWithdraw.isValue(aValue) then
+      raise EArgumentException.Create('Enter a valid amount for the withdrawal.');
+
     lWithdraw.Value := aValue;
 
-    lWithdraw.isBalance(FFinancialRepository.GetBalance);
+    if not lWithdraw.isBalance(FFinancialRepository.GetBalance) then
+      raise EInvalidOp.Create('There is not enough balance for this withdrawal.');
 
-    FFinancialRepository.SaveWithdrawal(lWithdraw);
+    FFinancialRepository.SaveWithdrawal(lWithdraw.Value);
   finally
     lWithdraw.DisposeOf;
   end;

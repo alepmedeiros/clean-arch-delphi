@@ -42,7 +42,7 @@ var
 begin
   lController := TController.Create;
   try
-    lController.MakeDeposit(10);
+    lController.MakeDeposit(150);
   finally
     lController.DisposeOf;
   end;

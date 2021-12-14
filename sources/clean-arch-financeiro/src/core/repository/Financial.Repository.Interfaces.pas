@@ -9,9 +9,9 @@ uses
 
 type
   iFinancialRepository = interface
-    procedure SaveWithdrawal(aWithdraw: TWithdraw);
-    procedure SaveDeposit(aDeposit: TDeposit);
-    procedure SaveHistory(aHistory: THistoric);
+    procedure SaveWithdrawal(Value: Double);
+    procedure SaveDeposit(Value: Double);
+    procedure SaveHistory(aEventDate, aDescription: String);
     function GetBalance: Double;
   end;
 
