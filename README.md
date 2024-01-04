@@ -43,11 +43,6 @@ How to begin with "Clean Architecture".
 ## Examples in Languages
 
 * Delphi
-* Kotlin
-* TypeScript 
-* JS
-* Jaca
-* C#
 
 # Further Reading
 
